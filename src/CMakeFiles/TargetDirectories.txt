@@ -1,0 +1,3 @@
+/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/CMakeFiles/rebuild_cache.dir
+/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/CMakeFiles/../build/tutorial.dir
+/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/CMakeFiles/edit_cache.dir
