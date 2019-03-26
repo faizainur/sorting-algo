@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/../build/generator.dir/generator.cpp.o CMakeFiles/../build/generator.dir/classes/gen.cpp.o CMakeFiles/../build/generator.dir/classes/sort.cpp.o  -o ../build/generator 

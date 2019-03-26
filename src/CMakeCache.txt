@@ -130,7 +130,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Tutorial
+CMAKE_PROJECT_NAME:STATIC=UTS
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -186,6 +186,12 @@ Tutorial_BINARY_DIR:STATIC=/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritm
 
 //Value Computed by CMake
 Tutorial_SOURCE_DIR:STATIC=/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src
+
+//Value Computed by CMake
+UTS_BINARY_DIR:STATIC=/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src
+
+//Value Computed by CMake
+UTS_SOURCE_DIR:STATIC=/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src
 
 
 ########################

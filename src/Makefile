@@ -111,44 +111,138 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ../build/tutorial
+# Target rules for targets named ../build/sorting
 
 # Build rule for target.
-../build/tutorial: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ../build/tutorial
-.PHONY : ../build/tutorial
+../build/sorting: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ../build/sorting
+.PHONY : ../build/sorting
 
 # fast build rule for target.
-../build/tutorial/fast:
-	$(MAKE) -f CMakeFiles/../build/tutorial.dir/build.make CMakeFiles/../build/tutorial.dir/build
-.PHONY : ../build/tutorial/fast
+../build/sorting/fast:
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/build
+.PHONY : ../build/sorting/fast
 
-tutorial.o: tutorial.cpp.o
+#=============================================================================
+# Target rules for targets named ../build/generator
 
-.PHONY : tutorial.o
+# Build rule for target.
+../build/generator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ../build/generator
+.PHONY : ../build/generator
+
+# fast build rule for target.
+../build/generator/fast:
+	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/build
+.PHONY : ../build/generator/fast
+
+classes/gen.o: classes/gen.cpp.o
+
+.PHONY : classes/gen.o
 
 # target to build an object file
-tutorial.cpp.o:
-	$(MAKE) -f CMakeFiles/../build/tutorial.dir/build.make CMakeFiles/../build/tutorial.dir/tutorial.cpp.o
-.PHONY : tutorial.cpp.o
+classes/gen.cpp.o:
+	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/gen.cpp.o
+.PHONY : classes/gen.cpp.o
 
-tutorial.i: tutorial.cpp.i
+classes/gen.i: classes/gen.cpp.i
 
-.PHONY : tutorial.i
+.PHONY : classes/gen.i
 
 # target to preprocess a source file
-tutorial.cpp.i:
-	$(MAKE) -f CMakeFiles/../build/tutorial.dir/build.make CMakeFiles/../build/tutorial.dir/tutorial.cpp.i
-.PHONY : tutorial.cpp.i
+classes/gen.cpp.i:
+	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/gen.cpp.i
+.PHONY : classes/gen.cpp.i
 
-tutorial.s: tutorial.cpp.s
+classes/gen.s: classes/gen.cpp.s
 
-.PHONY : tutorial.s
+.PHONY : classes/gen.s
 
 # target to generate assembly for a file
-tutorial.cpp.s:
-	$(MAKE) -f CMakeFiles/../build/tutorial.dir/build.make CMakeFiles/../build/tutorial.dir/tutorial.cpp.s
-.PHONY : tutorial.cpp.s
+classes/gen.cpp.s:
+	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/gen.cpp.s
+.PHONY : classes/gen.cpp.s
+
+classes/sort.o: classes/sort.cpp.o
+
+.PHONY : classes/sort.o
+
+# target to build an object file
+classes/sort.cpp.o:
+	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/sort.cpp.o
+.PHONY : classes/sort.cpp.o
+
+classes/sort.i: classes/sort.cpp.i
+
+.PHONY : classes/sort.i
+
+# target to preprocess a source file
+classes/sort.cpp.i:
+	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/sort.cpp.i
+.PHONY : classes/sort.cpp.i
+
+classes/sort.s: classes/sort.cpp.s
+
+.PHONY : classes/sort.s
+
+# target to generate assembly for a file
+classes/sort.cpp.s:
+	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/sort.cpp.s
+.PHONY : classes/sort.cpp.s
+
+generator.o: generator.cpp.o
+
+.PHONY : generator.o
+
+# target to build an object file
+generator.cpp.o:
+	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/generator.cpp.o
+.PHONY : generator.cpp.o
+
+generator.i: generator.cpp.i
+
+.PHONY : generator.i
+
+# target to preprocess a source file
+generator.cpp.i:
+	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/generator.cpp.i
+.PHONY : generator.cpp.i
+
+generator.s: generator.cpp.s
+
+.PHONY : generator.s
+
+# target to generate assembly for a file
+generator.cpp.s:
+	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/generator.cpp.s
+.PHONY : generator.cpp.s
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -157,11 +251,21 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... ../build/tutorial"
 	@echo "... edit_cache"
-	@echo "... tutorial.o"
-	@echo "... tutorial.i"
-	@echo "... tutorial.s"
+	@echo "... ../build/sorting"
+	@echo "... ../build/generator"
+	@echo "... classes/gen.o"
+	@echo "... classes/gen.i"
+	@echo "... classes/gen.s"
+	@echo "... classes/sort.o"
+	@echo "... classes/sort.i"
+	@echo "... classes/sort.s"
+	@echo "... generator.o"
+	@echo "... generator.i"
+	@echo "... generator.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
