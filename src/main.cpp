@@ -52,13 +52,12 @@ int main(int argc, char** argv){
                     rlutil::setColor(COLOR_RED);
                     std::cout << sorting_mode << " (Invalid)\n" << std::endl;
                     std::cout << "Invalid sorting method." << std::endl;
+                    rlutil::resetColor();
                     return EXIT_FAILURE;
             }
             rlutil::setColor(COLOR_GREEN);
-            std::cout << "\nValid arguments" << std::endl;
-            sorter.bubble_sort(in_path, out_path);
-            
-            // sort(sorting_mode, in_path, out_path);
+            std::cout << "\nValid arguments." << std::endl;            
+            sort(sorting_mode, in_path, out_path);
         }
         else if (argc != 7) {
             std::cout << "Incomplete arguments !!!" << std::endl;
@@ -77,6 +76,7 @@ int main(int argc, char** argv){
 
 
 
+/* BUG Appeared */
 int show_menu(){
     int opmode;
     std::string in, filename, out_path;
@@ -91,23 +91,40 @@ int show_menu(){
     #elif _WIN32
         system("cls");
     #endif
-
+    
     printf("#============================#\n");
     printf("#       SORTING PROGRAM      #\n");
     printf("#============================#\n\n");
-    printf("Input file : ");
-    std::cin >> in;
-    printf("\nOutput filename : ");
-    std::cin >> filename;
-    printf("\nOutput path : ");
-    std::cin >> out_path;
     printf("Sorting method : ");
     printf("\n\t[1] Merged Sort\n\t[2] Quick Sort\n\t[3] Heap Sort\n\t[4] Insertion Sort");
     printf("\n\t[5] Bucket Sort\n\t[6] Radix Sort\n\t[7] Counting Sort\n\t[8] Bubble Sort");
     printf("\n\t[0] Exit program\nSelect : ");
-    std::cin >> opmode;
+     std::cin >> opmode;
 
-    if (opmode != 0) sort(opmode, in, out_path+filename);
+    
+    if (opmode == 0){
+        return opmode;
+    }
+    printf("Input file : ");
+    std::cin >> in;
+    printf("\nOutput path : ");
+    std::cin >> out_path;
+    std::cout << out_path;
+    
+   
+    if (opmode != 0) sort(opmode, in, out_path);
+    
+    #if __linux__
+        std::cin.ignore(1024, '\n');
+        std::cout << "Press enter to continue...";
+        std::cin.get();
+    #elif _MINGW32_
+        system("pause");
+    #elif _CYGWIN32_
+        system("pause");
+    #elif _WIN32
+        system("pause");
+    #endif
 
     return opmode;
 }

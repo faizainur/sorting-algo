@@ -2,6 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <stdexcept>
+#include <sstream>
 #include "rlutil.h"
 
 #define COLOR_BLACK 0
@@ -38,10 +39,11 @@ namespace UTS {
             int bubble_sort(std::string input_path, std::string output_path);
             /* =============== */
 
+            bool load_data(std::string path_to_file);
+
         private:
             int count;
             std::vector<int> DATA_STREAM;
-            bool load_data(std::string path_to_file);
             bool write_to_file(std::string path);
 
             

@@ -19,3 +19,7 @@ add_executable(../build/sorting
 add_executable(../build/generator
                 generator.cpp
                 ${CLASS_DEF})
+
+add_executable(../build/test
+                test.cpp
+                ${CLASS_DEF})

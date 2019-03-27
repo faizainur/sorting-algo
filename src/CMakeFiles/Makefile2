@@ -60,6 +60,43 @@ CMAKE_SOURCE_DIR = "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/s
 CMAKE_BINARY_DIR = "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src"
 
 #=============================================================================
+# Target rules for target CMakeFiles/../build/test.dir
+
+# All Build rule for target.
+CMakeFiles/../build/test.dir/all:
+	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/depend
+	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/CMakeFiles" --progress-num=9,10,11,12 "Built target ../build/test"
+.PHONY : CMakeFiles/../build/test.dir/all
+
+# Include target in all.
+all: CMakeFiles/../build/test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/../build/test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/CMakeFiles" 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/../build/test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/CMakeFiles" 0
+.PHONY : CMakeFiles/../build/test.dir/rule
+
+# Convenience name for target.
+../build/test: CMakeFiles/../build/test.dir/rule
+
+.PHONY : ../build/test
+
+# clean rule for target.
+CMakeFiles/../build/test.dir/clean:
+	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/clean
+.PHONY : CMakeFiles/../build/test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/../build/test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/../build/sorting.dir
 
 # All Build rule for target.

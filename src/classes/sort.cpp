@@ -1,5 +1,5 @@
 #include "sort.h"
-
+#include <stdexcept>
 using namespace UTS;
 
 sort::sort(){
@@ -12,23 +12,17 @@ sort::~sort(){
 }
 
 bool sort::load_data(std::string path ){
-    std::fstream input;
-    input.open(path, std::ios::in);
+        std::ifstream input;
+    input.open(path);
 
     if (!input){
-        rlutil::setColor(COLOR_RED);
-        std::cout << "Failed to read file " << path << std::endl;
-        return false;
+        std::cout << "Error" << std::endl;
     }
-
     std::string line;
-    while(input.is_open() && getline(input, line)){
-        // getline(input, line);
-        std::cout << line << std::endl;
-        // int buff = std::stoi(line);
-        // DATA_STREAM.push_back(buff);
-    }
-      
+   while (std::getline(input, line)){
+       DATA_STREAM.push_back(std::stoi(line));
+   }
+
     input.close();
     return true;
 }
@@ -43,16 +37,19 @@ bool sort::write_to_file(std::string path){
         return false;
     }
 
-    std::cout << "Writing to file" << std::endl;
+    std::cout << "Writing to file..." << std::endl;
     for (int i = 0; i < DATA_STREAM.size(); ++i){
         output << DATA_STREAM.at(i) << std::endl;
     }
     
     rlutil::setColor(COLOR_GREEN);
     std::cout << "Success writing to " << path << std::endl;
+    rlutil::resetColor();
+
+
     DATA_STREAM.clear();
     output.close();
-
+    
     return true;
 }
 
@@ -82,6 +79,7 @@ int sort::bubble_sort(std::string input_path, std::string output_path){
     if (!write_to_file(output_path)){
         return EXIT_FAILURE;
     }
+    DATA_STREAM.clear();
     return EXIT_SUCCESS;
 }
 
