@@ -39,7 +39,7 @@ bool Generator::write_to_file(std::string path){
 
     std::cout << "Generating..." << std::endl;
     for (int i = 0; i < DATA_STREAM.size(); ++i){
-        output << DATA_STREAM.at(i)<<std::endl;
+        output << DATA_STREAM.at(i) << std::endl;
     }
     output.close();
     return true;

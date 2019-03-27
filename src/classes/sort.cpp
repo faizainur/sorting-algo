@@ -24,46 +24,158 @@ bool sort::load_data(std::string path ){
     while(input.is_open() && !input.eof()){
         getline(input, line);
         DATA_STREAM.push_back(std::stoi(line));
-    }   
+    }
+      
     input.close();
     return true;
 }
 
-bool sort::save_data(std::string path){
-    bool status;
+bool sort::write_to_file(std::string path){
+    std::fstream output;
+    output.open(path, std::ios::out);
+
+    if (!output){
+        std::cout << "Failed to make file" << std::endl;
+        return false;
+    }
+
+    std::cout << "Writing to file" << std::endl;
+    for (int i = 0; i < DATA_STREAM.size(); ++i){
+        output << DATA_STREAM.at(i) << std::endl;
+    }
     
-    return status;
+    std::cout << "Success writing to " << path << std::endl;
+    DATA_STREAM.clear();
+    output.close();
+
+    return true;
 }
 
-void sort::bubble_sort(){
+bool sort::bubble_sort(std::string input_path, std::string output_path){
+    if (!load_data(input_path)){
+        return false;
+    }
 
+    /* Sorting algorithm */
+
+
+    /* ================= */
+
+    if (!write_to_file(output_path)){
+        return false;
+    }
+    return true;
 }
 
-void sort::bucket_sort(){
+bool sort::bucket_sort(std::string input_path, std::string output_path){
+    if (!load_data(input_path)){
+        return false;
+    }
 
+    /* Sorting algorithm */
+
+
+    /* ================= */
+
+    if (!write_to_file(output_path)){
+        return false;
+    }
+    return true;
 }
 
-void sort::counting_sort(){
-    
+bool sort::counting_sort(std::string input_path, std::string output_path){
+    if (!load_data(input_path)){
+        return false;
+    }
+
+    /* Sorting algorithm */
+
+
+    /* ================= */
+
+    if (!write_to_file(output_path)){
+        return false;
+    }
+    return true;
 }
 
-void sort::heap_sort(){
+bool sort::heap_sort(std::string input_path, std::string output_path){
+    if (!load_data(input_path)){
+        return false;
+    }
 
+    /* Sorting algorithm */
+
+
+    /* ================= */
+
+    if (!write_to_file(output_path)){
+        return false;
+    }
+    return true;
 }
 
-void sort::insertion_sort(){
+bool sort::insertion_sort(std::string input_path, std::string output_path){
+    if (!load_data(input_path)){
+        return false;
+    }
 
+    /* Sorting algorithm */
+
+
+    /* ================= */
+
+    if (!write_to_file(output_path)){
+        return false;
+    }
+    return true;
 }
 
-void sort::merged_sort(){
+bool sort::merged_sort(std::string input_path, std::string output_path){
+    if (!load_data(input_path)){
+        return false;
+    }
 
+    /* Sorting algorithm */
+
+
+    /* ================= */
+
+    if (!write_to_file(output_path)){
+        return false;
+    }
+    return true;
 }
 
-void sort::quick_sort(){
+bool sort::quick_sort(std::string input_path, std::string output_path){
+    if (!load_data(input_path)){
+        return false;
+    }
 
+    /* Sorting algorithm */
+
+
+    /* ================= */
+
+    if (!write_to_file(output_path)){
+        return false;
+    }
+    return true;
 }
 
-void sort::radix_sort(){
+bool sort::radix_sort(std::string input_path, std::string output_path){
+    if (!load_data(input_path)){
+        return false;
+    }
 
+    /* Sorting algorithm */
+
+
+    /* ================= */
+
+    if (!write_to_file(output_path)){
+        return false;
+    }
+    return true;
 }
 

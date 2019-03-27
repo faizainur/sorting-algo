@@ -10,21 +10,21 @@ namespace UTS {
             ~sort();
 
             /* Sorting method */
-            void quick_sort();
-            void merged_sort();
-            void heap_sort();
-            void insertion_sort();
-            void bucket_sort();
-            void radix_sort();
-            void counting_sort();
-            void bubble_sort();
+            bool quick_sort(std::string input_path, std::string output_path);
+            bool merged_sort(std::string input_path, std::string output_path);
+            bool heap_sort(std::string input_path, std::string output_path);
+            bool insertion_sort(std::string input_path, std::string output_path);
+            bool bucket_sort(std::string input_path, std::string output_path);
+            bool radix_sort(std::string input_path, std::string output_path);
+            bool counting_sort(std::string input_path, std::string output_path);
+            bool bubble_sort(std::string input_path, std::string output_path);
             /* =============== */
 
         private:
             int count;
             std::vector<int> DATA_STREAM;
             bool load_data(std::string path_to_file);
-            bool save_data(std::string path);
+            bool write_to_file(std::string path);
 
             
     };
