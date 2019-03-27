@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/../build/sorting.dir/main.cpp.o  -o ../build/sorting 
+/usr/bin/c++    -rdynamic CMakeFiles/../build/sorting.dir/main.cpp.o CMakeFiles/../build/sorting.dir/classes/gen.cpp.o CMakeFiles/../build/sorting.dir/classes/sort.cpp.o  -o ../build/sorting 

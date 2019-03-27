@@ -4,9 +4,12 @@
 build/generator.dir/classes/gen.cpp.o
  /media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/gen.cpp
  include/gen.h
+ include/rlutil.h
 build/generator.dir/classes/sort.cpp.o
  /media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/sort.cpp
+ include/rlutil.h
  include/sort.h
 build/generator.dir/generator.cpp.o
  /media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/generator.cpp
  include/gen.h
+ include/rlutil.h

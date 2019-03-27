@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/gen.cpp" "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/build/sorting.dir/classes/gen.cpp.o"
+  "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/sort.cpp" "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/build/sorting.dir/classes/sort.cpp.o"
   "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/main.cpp" "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/build/sorting.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -81,17 +81,69 @@ CMakeFiles/../build/sorting.dir/main.cpp.o.provides: CMakeFiles/../build/sorting
 CMakeFiles/../build/sorting.dir/main.cpp.o.provides.build: CMakeFiles/../build/sorting.dir/main.cpp.o
 
 
+CMakeFiles/../build/sorting.dir/classes/gen.cpp.o: CMakeFiles/../build/sorting.dir/flags.make
+CMakeFiles/../build/sorting.dir/classes/gen.cpp.o: classes/gen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/../build/sorting.dir/classes/gen.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/../build/sorting.dir/classes/gen.cpp.o -c "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/gen.cpp"
+
+CMakeFiles/../build/sorting.dir/classes/gen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/../build/sorting.dir/classes/gen.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/gen.cpp" > CMakeFiles/../build/sorting.dir/classes/gen.cpp.i
+
+CMakeFiles/../build/sorting.dir/classes/gen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/../build/sorting.dir/classes/gen.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/gen.cpp" -o CMakeFiles/../build/sorting.dir/classes/gen.cpp.s
+
+CMakeFiles/../build/sorting.dir/classes/gen.cpp.o.requires:
+
+.PHONY : CMakeFiles/../build/sorting.dir/classes/gen.cpp.o.requires
+
+CMakeFiles/../build/sorting.dir/classes/gen.cpp.o.provides: CMakeFiles/../build/sorting.dir/classes/gen.cpp.o.requires
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/gen.cpp.o.provides.build
+.PHONY : CMakeFiles/../build/sorting.dir/classes/gen.cpp.o.provides
+
+CMakeFiles/../build/sorting.dir/classes/gen.cpp.o.provides.build: CMakeFiles/../build/sorting.dir/classes/gen.cpp.o
+
+
+CMakeFiles/../build/sorting.dir/classes/sort.cpp.o: CMakeFiles/../build/sorting.dir/flags.make
+CMakeFiles/../build/sorting.dir/classes/sort.cpp.o: classes/sort.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/../build/sorting.dir/classes/sort.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/../build/sorting.dir/classes/sort.cpp.o -c "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/sort.cpp"
+
+CMakeFiles/../build/sorting.dir/classes/sort.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/../build/sorting.dir/classes/sort.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/sort.cpp" > CMakeFiles/../build/sorting.dir/classes/sort.cpp.i
+
+CMakeFiles/../build/sorting.dir/classes/sort.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/../build/sorting.dir/classes/sort.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/sort.cpp" -o CMakeFiles/../build/sorting.dir/classes/sort.cpp.s
+
+CMakeFiles/../build/sorting.dir/classes/sort.cpp.o.requires:
+
+.PHONY : CMakeFiles/../build/sorting.dir/classes/sort.cpp.o.requires
+
+CMakeFiles/../build/sorting.dir/classes/sort.cpp.o.provides: CMakeFiles/../build/sorting.dir/classes/sort.cpp.o.requires
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/sort.cpp.o.provides.build
+.PHONY : CMakeFiles/../build/sorting.dir/classes/sort.cpp.o.provides
+
+CMakeFiles/../build/sorting.dir/classes/sort.cpp.o.provides.build: CMakeFiles/../build/sorting.dir/classes/sort.cpp.o
+
+
 # Object files for target ../build/sorting
 __/build/sorting_OBJECTS = \
-"CMakeFiles/../build/sorting.dir/main.cpp.o"
+"CMakeFiles/../build/sorting.dir/main.cpp.o" \
+"CMakeFiles/../build/sorting.dir/classes/gen.cpp.o" \
+"CMakeFiles/../build/sorting.dir/classes/sort.cpp.o"
 
 # External object files for target ../build/sorting
 __/build/sorting_EXTERNAL_OBJECTS =
 
 ../build/sorting: CMakeFiles/../build/sorting.dir/main.cpp.o
+../build/sorting: CMakeFiles/../build/sorting.dir/classes/gen.cpp.o
+../build/sorting: CMakeFiles/../build/sorting.dir/classes/sort.cpp.o
 ../build/sorting: CMakeFiles/../build/sorting.dir/build.make
 ../build/sorting: CMakeFiles/../build/sorting.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../build/sorting"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../build/sorting"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/../build/sorting.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +152,8 @@ CMakeFiles/../build/sorting.dir/build: ../build/sorting
 .PHONY : CMakeFiles/../build/sorting.dir/build
 
 CMakeFiles/../build/sorting.dir/requires: CMakeFiles/../build/sorting.dir/main.cpp.o.requires
+CMakeFiles/../build/sorting.dir/requires: CMakeFiles/../build/sorting.dir/classes/gen.cpp.o.requires
+CMakeFiles/../build/sorting.dir/requires: CMakeFiles/../build/sorting.dir/classes/sort.cpp.o.requires
 
 .PHONY : CMakeFiles/../build/sorting.dir/requires
 

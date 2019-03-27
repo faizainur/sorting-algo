@@ -16,14 +16,17 @@ bool sort::load_data(std::string path ){
     input.open(path, std::ios::in);
 
     if (!input){
+        rlutil::setColor(COLOR_RED);
         std::cout << "Failed to read file " << path << std::endl;
         return false;
     }
 
     std::string line;
-    while(input.is_open() && !input.eof()){
-        getline(input, line);
-        DATA_STREAM.push_back(std::stoi(line));
+    while(input.is_open() && getline(input, line)){
+        // getline(input, line);
+        std::cout << line << std::endl;
+        // int buff = std::stoi(line);
+        // DATA_STREAM.push_back(buff);
     }
       
     input.close();
@@ -35,6 +38,7 @@ bool sort::write_to_file(std::string path){
     output.open(path, std::ios::out);
 
     if (!output){
+        rlutil::setColor(COLOR_RED);
         std::cout << "Failed to make file" << std::endl;
         return false;
     }
@@ -44,6 +48,7 @@ bool sort::write_to_file(std::string path){
         output << DATA_STREAM.at(i) << std::endl;
     }
     
+    rlutil::setColor(COLOR_GREEN);
     std::cout << "Success writing to " << path << std::endl;
     DATA_STREAM.clear();
     output.close();
@@ -51,25 +56,38 @@ bool sort::write_to_file(std::string path){
     return true;
 }
 
-bool sort::bubble_sort(std::string input_path, std::string output_path){
+// void print_array(){
+//     std::vector<int>::iterator it;
+//     for (it = )
+// }
+
+int sort::bubble_sort(std::string input_path, std::string output_path){
     if (!load_data(input_path)){
-        return false;
+        return EXIT_FAILURE;
     }
-
+    std::vector<int> b;
     /* Sorting algorithm */
-
-
+    for (int i = 0; i < DATA_STREAM.size() - 1; i++){
+        for (int j = 0; j < DATA_STREAM.size() - i - 1; j++){
+            int buff;
+            if (DATA_STREAM.at(j) > DATA_STREAM.at(j + 1)){
+                buff = DATA_STREAM.at(j + 1);
+                DATA_STREAM.at(j + 1) = DATA_STREAM.at(j);
+                DATA_STREAM.at(j) = buff;
+            }
+        }
+    }
     /* ================= */
 
     if (!write_to_file(output_path)){
-        return false;
+        return EXIT_FAILURE;
     }
-    return true;
+    return EXIT_SUCCESS;
 }
 
-bool sort::bucket_sort(std::string input_path, std::string output_path){
+int sort::bucket_sort(std::string input_path, std::string output_path){
     if (!load_data(input_path)){
-        return false;
+        return EXIT_FAILURE;
     }
 
     /* Sorting algorithm */
@@ -78,14 +96,14 @@ bool sort::bucket_sort(std::string input_path, std::string output_path){
     /* ================= */
 
     if (!write_to_file(output_path)){
-        return false;
+        return EXIT_FAILURE;
     }
-    return true;
+    return EXIT_SUCCESS;
 }
 
-bool sort::counting_sort(std::string input_path, std::string output_path){
+int sort::counting_sort(std::string input_path, std::string output_path){
     if (!load_data(input_path)){
-        return false;
+        return EXIT_FAILURE;
     }
 
     /* Sorting algorithm */
@@ -94,14 +112,14 @@ bool sort::counting_sort(std::string input_path, std::string output_path){
     /* ================= */
 
     if (!write_to_file(output_path)){
-        return false;
+        return EXIT_FAILURE;
     }
-    return true;
+    return EXIT_SUCCESS;
 }
 
-bool sort::heap_sort(std::string input_path, std::string output_path){
+int sort::heap_sort(std::string input_path, std::string output_path){
     if (!load_data(input_path)){
-        return false;
+        return EXIT_FAILURE;
     }
 
     /* Sorting algorithm */
@@ -110,14 +128,14 @@ bool sort::heap_sort(std::string input_path, std::string output_path){
     /* ================= */
 
     if (!write_to_file(output_path)){
-        return false;
+        return EXIT_FAILURE;
     }
-    return true;
+    return EXIT_SUCCESS;
 }
 
-bool sort::insertion_sort(std::string input_path, std::string output_path){
+int sort::insertion_sort(std::string input_path, std::string output_path){
     if (!load_data(input_path)){
-        return false;
+        return EXIT_FAILURE;
     }
 
     /* Sorting algorithm */
@@ -126,14 +144,14 @@ bool sort::insertion_sort(std::string input_path, std::string output_path){
     /* ================= */
 
     if (!write_to_file(output_path)){
-        return false;
+        return EXIT_FAILURE;
     }
-    return true;
+    return EXIT_SUCCESS;
 }
 
-bool sort::merged_sort(std::string input_path, std::string output_path){
+int sort::merged_sort(std::string input_path, std::string output_path){
     if (!load_data(input_path)){
-        return false;
+        return EXIT_FAILURE;
     }
 
     /* Sorting algorithm */
@@ -142,14 +160,14 @@ bool sort::merged_sort(std::string input_path, std::string output_path){
     /* ================= */
 
     if (!write_to_file(output_path)){
-        return false;
+        return EXIT_FAILURE;
     }
-    return true;
+    return EXIT_SUCCESS;
 }
 
-bool sort::quick_sort(std::string input_path, std::string output_path){
+int sort::quick_sort(std::string input_path, std::string output_path){
     if (!load_data(input_path)){
-        return false;
+        return EXIT_FAILURE;
     }
 
     /* Sorting algorithm */
@@ -158,14 +176,14 @@ bool sort::quick_sort(std::string input_path, std::string output_path){
     /* ================= */
 
     if (!write_to_file(output_path)){
-        return false;
+        return EXIT_FAILURE;
     }
-    return true;
+    return EXIT_SUCCESS;
 }
 
-bool sort::radix_sort(std::string input_path, std::string output_path){
+int sort::radix_sort(std::string input_path, std::string output_path){
     if (!load_data(input_path)){
-        return false;
+        return EXIT_FAILURE;
     }
 
     /* Sorting algorithm */
@@ -174,8 +192,8 @@ bool sort::radix_sort(std::string input_path, std::string output_path){
     /* ================= */
 
     if (!write_to_file(output_path)){
-        return false;
+        return EXIT_FAILURE;
     }
-    return true;
+    return EXIT_SUCCESS;
 }
 

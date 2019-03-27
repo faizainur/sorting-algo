@@ -3,10 +3,13 @@
 
 build/generator.dir/classes/gen.cpp.o: classes/gen.cpp
 build/generator.dir/classes/gen.cpp.o: include/gen.h
+build/generator.dir/classes/gen.cpp.o: include/rlutil.h
 
 build/generator.dir/classes/sort.cpp.o: classes/sort.cpp
+build/generator.dir/classes/sort.cpp.o: include/rlutil.h
 build/generator.dir/classes/sort.cpp.o: include/sort.h
 
 build/generator.dir/generator.cpp.o: generator.cpp
 build/generator.dir/generator.cpp.o: include/gen.h
+build/generator.dir/generator.cpp.o: include/rlutil.h
 

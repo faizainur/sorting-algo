@@ -13,7 +13,8 @@ set(CLASS_DEF
     classes/sort.cpp)
 
 add_executable(../build/sorting 
-                main.cpp)
+                main.cpp
+                ${CLASS_DEF})
 
 add_executable(../build/generator
                 generator.cpp

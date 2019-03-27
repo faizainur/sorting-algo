@@ -142,6 +142,7 @@ classes/gen.o: classes/gen.cpp.o
 
 # target to build an object file
 classes/gen.cpp.o:
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/gen.cpp.o
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/gen.cpp.o
 .PHONY : classes/gen.cpp.o
 
@@ -151,6 +152,7 @@ classes/gen.i: classes/gen.cpp.i
 
 # target to preprocess a source file
 classes/gen.cpp.i:
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/gen.cpp.i
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/gen.cpp.i
 .PHONY : classes/gen.cpp.i
 
@@ -160,6 +162,7 @@ classes/gen.s: classes/gen.cpp.s
 
 # target to generate assembly for a file
 classes/gen.cpp.s:
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/gen.cpp.s
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/gen.cpp.s
 .PHONY : classes/gen.cpp.s
 
@@ -169,6 +172,7 @@ classes/sort.o: classes/sort.cpp.o
 
 # target to build an object file
 classes/sort.cpp.o:
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/sort.cpp.o
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/sort.cpp.o
 .PHONY : classes/sort.cpp.o
 
@@ -178,6 +182,7 @@ classes/sort.i: classes/sort.cpp.i
 
 # target to preprocess a source file
 classes/sort.cpp.i:
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/sort.cpp.i
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/sort.cpp.i
 .PHONY : classes/sort.cpp.i
 
@@ -187,6 +192,7 @@ classes/sort.s: classes/sort.cpp.s
 
 # target to generate assembly for a file
 classes/sort.cpp.s:
+	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/sort.cpp.s
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/sort.cpp.s
 .PHONY : classes/sort.cpp.s
 
