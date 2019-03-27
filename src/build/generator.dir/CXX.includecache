@@ -13,8 +13,6 @@ gen.h
 /media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/sort.cpp
 sort.h
 /media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/classes/sort.h
-stdexcept
--
 
 /media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/src/generator.cpp
 gen.h
@@ -71,4 +69,6 @@ sstream
 -
 rlutil.h
 include/rlutil.h
+time.h
+-
 

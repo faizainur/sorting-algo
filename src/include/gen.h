@@ -1,3 +1,10 @@
+/* =================================
+    Faiz Ainur Rofiq
+    1706985956
+    Teknik Komputer 2017
+   ================================= */
+
+   
 #include <fstream>
 #include <iostream>
 #include <vector>

@@ -1,4 +1,11 @@
+/* =================================
+    Faiz Ainur Rofiq
+    1706985956
+    Teknik Komputer 2017
+   ================================= */
+
 #include "gen.h"
+
 
 using namespace UTS;
 
@@ -23,7 +30,9 @@ void Generator::generate(int count, std::string path){
     if (!Generator::write_to_file(path)){
         std::cout << "Failed writing to " << path << std::endl;
     } else {
+        rlutil::setColor(COLOR_GREEN);
         std::cout << "Success writing to " << path << std::endl;
+        rlutil::resetColor();
     }
     DATA_STREAM.clear();
 }
@@ -33,7 +42,9 @@ bool Generator::write_to_file(std::string path){
     output.open(path, std::ios::out);
 
     if (!output){
+        rlutil::setColor(COLOR_RED);
         std::cout << "Failed to make file" << std::endl;
+        rlutil::resetColor();
         return false;
     }
 

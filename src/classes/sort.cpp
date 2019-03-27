@@ -1,5 +1,11 @@
+/* =================================
+    Faiz Ainur Rofiq
+    1706985956
+    Teknik Komputer 2017
+   ================================= */
+
 #include "sort.h"
-#include <stdexcept>
+
 using namespace UTS;
 
 sort::sort(){
@@ -53,16 +59,13 @@ bool sort::write_to_file(std::string path){
     return true;
 }
 
-// void print_array(){
-//     std::vector<int>::iterator it;
-//     for (it = )
-// }
-
 int sort::bubble_sort(std::string input_path, std::string output_path){
+    clock_t tStart = clock();
     if (!load_data(input_path)){
         return EXIT_FAILURE;
     }
-    std::vector<int> b;
+
+    std::cout << "Sorting in process..." << std::endl;
     /* Sorting algorithm */
     for (int i = 0; i < DATA_STREAM.size() - 1; i++){
         for (int j = 0; j < DATA_STREAM.size() - i - 1; j++){
@@ -78,8 +81,11 @@ int sort::bubble_sort(std::string input_path, std::string output_path){
 
     if (!write_to_file(output_path)){
         return EXIT_FAILURE;
-    }
+    }   
     DATA_STREAM.clear();
+    rlutil::setColor(COLOR_YELLOW);
+    printf("Time taken: %.5fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+    rlutil::resetColor();
     return EXIT_SUCCESS;
 }
 

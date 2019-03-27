@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ../build/test
-
-# Build rule for target.
-../build/test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ../build/test
-.PHONY : ../build/test
-
-# fast build rule for target.
-../build/test/fast:
-	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/build
-.PHONY : ../build/test/fast
-
-#=============================================================================
 # Target rules for targets named ../build/sorting
 
 # Build rule for target.
@@ -155,7 +142,6 @@ classes/gen.o: classes/gen.cpp.o
 
 # target to build an object file
 classes/gen.cpp.o:
-	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/classes/gen.cpp.o
 	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/gen.cpp.o
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/gen.cpp.o
 .PHONY : classes/gen.cpp.o
@@ -166,7 +152,6 @@ classes/gen.i: classes/gen.cpp.i
 
 # target to preprocess a source file
 classes/gen.cpp.i:
-	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/classes/gen.cpp.i
 	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/gen.cpp.i
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/gen.cpp.i
 .PHONY : classes/gen.cpp.i
@@ -177,7 +162,6 @@ classes/gen.s: classes/gen.cpp.s
 
 # target to generate assembly for a file
 classes/gen.cpp.s:
-	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/classes/gen.cpp.s
 	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/gen.cpp.s
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/gen.cpp.s
 .PHONY : classes/gen.cpp.s
@@ -188,7 +172,6 @@ classes/sort.o: classes/sort.cpp.o
 
 # target to build an object file
 classes/sort.cpp.o:
-	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/classes/sort.cpp.o
 	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/sort.cpp.o
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/sort.cpp.o
 .PHONY : classes/sort.cpp.o
@@ -199,7 +182,6 @@ classes/sort.i: classes/sort.cpp.i
 
 # target to preprocess a source file
 classes/sort.cpp.i:
-	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/classes/sort.cpp.i
 	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/sort.cpp.i
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/sort.cpp.i
 .PHONY : classes/sort.cpp.i
@@ -210,7 +192,6 @@ classes/sort.s: classes/sort.cpp.s
 
 # target to generate assembly for a file
 classes/sort.cpp.s:
-	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/classes/sort.cpp.s
 	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/classes/sort.cpp.s
 	$(MAKE) -f CMakeFiles/../build/generator.dir/build.make CMakeFiles/../build/generator.dir/classes/sort.cpp.s
 .PHONY : classes/sort.cpp.s
@@ -269,33 +250,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/../build/sorting.dir/build.make CMakeFiles/../build/sorting.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-test.o: test.cpp.o
-
-.PHONY : test.o
-
-# target to build an object file
-test.cpp.o:
-	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/test.cpp.o
-.PHONY : test.cpp.o
-
-test.i: test.cpp.i
-
-.PHONY : test.i
-
-# target to preprocess a source file
-test.cpp.i:
-	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/test.cpp.i
-.PHONY : test.cpp.i
-
-test.s: test.cpp.s
-
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) -f CMakeFiles/../build/test.dir/build.make CMakeFiles/../build/test.dir/test.cpp.s
-.PHONY : test.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -304,7 +258,6 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... ../build/test"
 	@echo "... ../build/sorting"
 	@echo "... ../build/generator"
 	@echo "... classes/gen.o"
@@ -319,9 +272,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
 .PHONY : help
 
 
