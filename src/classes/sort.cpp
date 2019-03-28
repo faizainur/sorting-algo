@@ -77,15 +77,19 @@ int sort::bubble_sort(std::string input_path, std::string output_path){
             }
         }
     }
+
+    // Printing the time taken to sort
+    rlutil::setColor(COLOR_YELLOW);
+    printf("Time taken: %.5fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+    rlutil::resetColor();
+
     /* ================= */
 
     if (!write_to_file(output_path)){
         return EXIT_FAILURE;
-    }   
+    }
     DATA_STREAM.clear();
-    rlutil::setColor(COLOR_YELLOW);
-    printf("Time taken: %.5fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
-    rlutil::resetColor();
+    
     return EXIT_SUCCESS;
 }
 
@@ -169,6 +173,7 @@ int sort::merged_sort(std::string input_path, std::string output_path){
     return EXIT_SUCCESS;
 }
 
+/* TODO */
 int sort::quick_sort(std::string input_path, std::string output_path){
     if (!load_data(input_path)){
         return EXIT_FAILURE;
