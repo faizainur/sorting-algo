@@ -1,0 +1,4 @@
+/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/build/linux/CMakeFiles/edit_cache.dir
+/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/build/linux/CMakeFiles/sorting.dir
+/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/build/linux/CMakeFiles/rebuild_cache.dir
+/media/faizainur/Data/Kuliah/Semester 4 2019/Algoritma/UTS/build/linux/CMakeFiles/generator.dir

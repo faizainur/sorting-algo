@@ -215,7 +215,7 @@ void sort(int sorting_mode, std::string in, std::string out){
 
 int help(){
     std::ifstream help_file;
-    help_file.open("../src/help.txt");
+    help_file.open("help.txt");
 
     if (!help_file){
         rlutil::setColor(COLOR_RED);

@@ -15,10 +15,10 @@ set(CLASS_DEF
     classes/gen.cpp
     classes/sort.cpp)
 
-add_executable(../build/sorting 
+add_executable(sorting
                 main.cpp
                 ${CLASS_DEF})
 
-add_executable(../build/generator
+add_executable(generator
                 generator.cpp
                 ${CLASS_DEF})
