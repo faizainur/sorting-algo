@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/sorting.dir/main.cpp.o CMakeFiles/sorting.dir/classes/gen.cpp.o CMakeFiles/sorting.dir/classes/sort.cpp.o  -o sorting 

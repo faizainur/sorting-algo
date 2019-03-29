@@ -14,10 +14,12 @@
 int show_menu();
 void sort(int sorting_mode, std::string in, std::string out);
 int help();
+void clear_screen();
+void wait_key();
 
 int main(int argc, char** argv){
 
-    int sorting_mode, opmode;            
+    int sorting_mode, opmode {1};            
     std::string in_path, out_path;       // Creating object string
     std::array<std::string, 6> args;     // Creating object array to store arguments inputed by user
 
@@ -126,17 +128,9 @@ int show_menu(){
     int opmode;
     std::string in, filename, out_path;
 
-    // Check OS to decide which command to run
-    #if __linux__          // if linux based
-        system("clear");
-    #elif __MINGW32__      // if Windows and the program compiled using MinGW compiler
-        system("cls");
-    #elif __CYGWIN32__     // if Windows and the program compiled using CYGWIN compiler
-        system("cls");
-    #elif _WIN32           // if Windows and the program compiled using MVC
-        system("cls");
-    #endif
+    clear_screen();
     
+    // system("clear");
     /* ======================================= MENU ============================================ */
     printf("#============================#\n");
     printf("#       SORTING PROGRAM      #\n");
@@ -149,10 +143,11 @@ int show_menu(){
     
     if (opmode == 0){      // if user choose to exit program [0], then exit program
         return opmode;
-    } else {
+    } else if (opmode == 9){
         help();
         return opmode;
-    }
+    } else if (opmode > 9) std::cout << "Invalid option, please refer to the list"
+                            << std::endl; wait_key(); return opmode;
 
     /* if user chose one of sorting methods available */
     printf("Input file : ");
@@ -165,6 +160,25 @@ int show_menu(){
     if (opmode != 0) sort(opmode, in, out_path);
     
     // Check OS
+    
+
+    return opmode;
+}
+
+void clear_screen(){
+      // Check OS to decide which command to run
+    #if __linux__          // if linux based
+        system("clear");
+    #elif __MINGW32__      // if Windows and the program compiled using MinGW compiler
+        system("cls");
+    #elif __CYGWIN32__     // if Windows and the program compiled using CYGWIN compiler
+        system("cls");
+    #elif _WIN32           // if Windows and the program compiled using MVC
+        system("cls");
+    #endif
+}
+
+void wait_key(){
     #if __linux__
         std::cin.ignore(1024, '\n');
         std::cout << "Press enter to continue...";
@@ -176,8 +190,6 @@ int show_menu(){
     #elif _WIN32
         system("pause");
     #endif
-
-    return opmode;
 }
 
 void sort(int sorting_mode, std::string in, std::string out){
