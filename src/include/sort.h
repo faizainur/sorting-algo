@@ -45,6 +45,7 @@ namespace UTS {
             int radix_sort(std::string input_path, std::string output_path);
             int counting_sort(std::string input_path, std::string output_path);
             int bubble_sort(std::string input_path, std::string output_path);
+            void do_quicksort(std::vector<int> &vec, int L, int R);
             /* =============== */
 
 
@@ -52,6 +53,7 @@ namespace UTS {
             int count;
             std::vector<int> DATA_STREAM;
             bool write_to_file(std::string path);
+            void swap(std::vector<int>& v, int x, int y);
             bool load_data(std::string path_to_file);
 
 

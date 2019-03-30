@@ -50,7 +50,15 @@ bool sort::write_to_file(std::string path){
     
     rlutil::setColor(COLOR_GREEN);
     std::cout << "Success writing to " << path << std::endl;
-    rlutil::resetColor();
+    #if __linux__
+        rlutil::resetColor();
+    #elif _MINGW32_
+        rlutil::setColor(COLOR_WHITE);
+    #elif _CYGWIN32_
+        rlutil::setColor(COLOR_WHITE);
+    #elif _WIN32
+        rlutil::setColor(COLOR_WHITE);
+    #endif
 
 
     DATA_STREAM.clear();
@@ -81,7 +89,15 @@ int sort::bubble_sort(std::string input_path, std::string output_path){
     // Printing the time taken to sort
     rlutil::setColor(COLOR_YELLOW);
     printf("Time taken: %.5fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
-    rlutil::resetColor();
+    #if __linux__
+        rlutil::resetColor();
+    #elif _MINGW32_
+        rlutil::setColor(COLOR_WHITE);
+    #elif _CYGWIN32_
+        rlutil::setColor(COLOR_WHITE);
+    #elif _WIN32
+        rlutil::setColor(COLOR_WHITE);
+    #endif
 
     /* ================= */
 
@@ -93,95 +109,55 @@ int sort::bubble_sort(std::string input_path, std::string output_path){
     return EXIT_SUCCESS;
 }
 
-int sort::bucket_sort(std::string input_path, std::string output_path){
-    if (!load_data(input_path)){
-        return EXIT_FAILURE;
+
+void sort::do_quicksort(std::vector<int> &vec, int L, int R) {
+    int i, j, mid, piv;
+    i = L;
+    j = R;
+    mid = L + (R - L) / 2;
+    piv = vec[mid];
+
+    while (i<R || j>L) {
+        while (vec[i] < piv)
+            i++;
+        while (vec[j] > piv)
+            j--;
+
+        if (i <= j) {
+            swap(vec, i, j); //error=swap function doesnt take 3 arguments
+            i++;
+            j--;
+        }
+        else {
+            if (i < R)
+                do_quicksort(vec, i, R);
+            if (j > L)
+                do_quicksort(vec, L, j);
+            return;
+        }
     }
-
-    /* Sorting algorithm */
-
-
-    /* ================= */
-
-    if (!write_to_file(output_path)){
-        return EXIT_FAILURE;
-    }
-    return EXIT_SUCCESS;
 }
 
-int sort::counting_sort(std::string input_path, std::string output_path){
-    if (!load_data(input_path)){
-        return EXIT_FAILURE;
-    }
+void sort::swap(std::vector<int>& v, int x, int y) {
+    int temp = v[x];
+    v[x] = v[y];
+    v[y] = temp;
 
-    /* Sorting algorithm */
-
-
-    /* ================= */
-
-    if (!write_to_file(output_path)){
-        return EXIT_FAILURE;
-    }
-    return EXIT_SUCCESS;
 }
-
-int sort::heap_sort(std::string input_path, std::string output_path){
-    if (!load_data(input_path)){
-        return EXIT_FAILURE;
-    }
-
-    /* Sorting algorithm */
-
-
-    /* ================= */
-
-    if (!write_to_file(output_path)){
-        return EXIT_FAILURE;
-    }
-    return EXIT_SUCCESS;
-}
-
-int sort::insertion_sort(std::string input_path, std::string output_path){
-    if (!load_data(input_path)){
-        return EXIT_FAILURE;
-    }
-
-    /* Sorting algorithm */
-
-
-    /* ================= */
-
-    if (!write_to_file(output_path)){
-        return EXIT_FAILURE;
-    }
-    return EXIT_SUCCESS;
-}
-
-int sort::merged_sort(std::string input_path, std::string output_path){
-    if (!load_data(input_path)){
-        return EXIT_FAILURE;
-    }
-
-    /* Sorting algorithm */
-
-
-    /* ================= */
-
-    if (!write_to_file(output_path)){
-        return EXIT_FAILURE;
-    }
-    return EXIT_SUCCESS;
-}
-
 /* TODO */
 int sort::quick_sort(std::string input_path, std::string output_path){
+        clock_t tStart = clock();
+
     if (!load_data(input_path)){
         return EXIT_FAILURE;
     }
 
     /* Sorting algorithm */
-
-
+    do_quicksort(DATA_STREAM, 0, DATA_STREAM.size() - 1);
+    // Printing the time taken to sort
+    rlutil::setColor(COLOR_YELLOW);
+    printf("Time taken: %.5fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+    rlutil::resetColor();
     /* ================= */
 
     if (!write_to_file(output_path)){
@@ -190,19 +166,9 @@ int sort::quick_sort(std::string input_path, std::string output_path){
     return EXIT_SUCCESS;
 }
 
-int sort::radix_sort(std::string input_path, std::string output_path){
-    if (!load_data(input_path)){
-        return EXIT_FAILURE;
-    }
-
-    /* Sorting algorithm */
 
 
-    /* ================= */
 
-    if (!write_to_file(output_path)){
-        return EXIT_FAILURE;
-    }
-    return EXIT_SUCCESS;
-}
+
+
 
