@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/generator.dir/generator.cpp.o CMakeFiles/generator.dir/classes/gen.cpp.o CMakeFiles/generator.dir/classes/sort.cpp.o  -o generator 

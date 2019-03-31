@@ -40,17 +40,12 @@ int main(int argc, char** argv){
                             --output   -o        Creating new text based files as output file, 
                                                  this file will contain the result of the process
                             --mode     -m        Choosing the method of sorting
+                            --help     -h        Open help file
                 
                 Sorting method:
                     No   | Method Name
-                    1      Merged Sort
-                    2      Quick Sort
-                    3      Heap Sort
-                    4      Insertion Sort
-                    5      Bucket Sort
-                    6      Radix Sort
-                    7      Counting Sort
-                    8      Bubble Sort
+                    1      Quick Sort
+                    2      Bubble Sort
                 
                 example  : 
                     ./sorting --mode 2 --input text.txt --ouput result.txt         ==> Linux based
@@ -81,14 +76,8 @@ int main(int argc, char** argv){
             std::cout << "Sorting method : ";
             switch (sorting_mode)
             {
-                case 1: std::cout << "Merged Sort" << std::endl; break;
-                case 2: std::cout << "Quick Sort" << std::endl; break;
-                case 3: std::cout << "Heap Sort" << std::endl; break;
-                case 4: std::cout << "Insertion Sort" << std::endl; break;
-                case 5: std::cout << "Bucket Sort" << std::endl; break;
-                case 6: std::cout << "Radix Sort" << std::endl; break;
-                case 7: std::cout << "Counting Sort" << std::endl; break;
-                case 8: std::cout << "Bubble Sort" << std::endl; break;
+                case 1: std::cout << "Quick Sort" << std::endl; break;
+                case 2: std::cout << "Bubble Sort" << std::endl; break;
                 default:
                     // If the the value of mode option invalid, then exit program
                     rlutil::setColor(COLOR_RED);
@@ -136,30 +125,41 @@ int show_menu(){
     printf("#       SORTING PROGRAM      #\n");
     printf("#============================#\n\n");
     printf("Sorting method : ");
-    printf("\n\t[1] Merged Sort\n\t[2] Quick Sort\n\t[3] Heap Sort\n\t[4] Insertion Sort");
-    printf("\n\t[5] Bucket Sort\n\t[6] Radix Sort\n\t[7] Counting Sort\n\t[8] Bubble Sort");
-    printf("\n\t[9] Help\n\t[0] Exit program\nSelect : ");
+    printf("\n\t[1] Quick Sort\n\t[2] Bubble Sort");
+    printf("\n\t[3] Help\n\t[0] Exit program\nSelect : ");
     std::cin >> opmode;
     
     if (opmode == 0){      // if user choose to exit program [0], then exit program
         return opmode;
-    } else if (opmode == 9){
+    } else if (opmode == 3){
         help();
         return opmode;
-    } else if (opmode > 9) std::cout << "Invalid option, please refer to the list"
-                            << std::endl; wait_key(); return opmode;
+    } else if (opmode == 1 || opmode == 2){
+        /* if user chose one of sorting methods available */
+        printf("Input file : ");
+        std::cin >> in;
+        printf("\nOutput path : ");
+        std::cin >> out_path;
+        
+        std::cout << "\nInput          : " << in << std::endl;
+        std::cout << "Output         : " << out_path << std::endl;
+        std::cout << "Sorting method : ";
+            switch (opmode)
+            {
+                case 1: std::cout << "Quick Sort" << std::endl; break;
+                case 2: std::cout << "Bubble Sort" << std::endl; break;
+                default:
+                    return EXIT_FAILURE;
+            }
+        // Run sorting algorithm
+        sort(opmode, in, out_path);
+    }else{
+        std::cout << "Invalid Options" << std::endl;
+        wait_key();
+        return opmode;
+    }
 
-    /* if user chose one of sorting methods available */
-    printf("Input file : ");
-    std::cin >> in;
-    printf("\nOutput path : ");
-    std::cin >> out_path;
-    std::cout << out_path;
     
-    // Run sorting algorithm
-    if (opmode != 0) sort(opmode, in, out_path);
-    
-    // Check OS
     
     
     return opmode;
@@ -197,27 +197,9 @@ void sort(int sorting_mode, std::string in, std::string out){
     switch (sorting_mode)                // Based on the user input will decide which sorting method to run
         {
             case 1:
-                sorter.merged_sort(in, out);
-                break;
-            case 2:
                 sorter.quick_sort(in, out);
                 break;
-            case 3:
-                sorter.heap_sort(in, out);
-                break;
-            case 4:
-                sorter.insertion_sort(in, out);
-                break;
-            case 5:
-                sorter.bucket_sort(in, out);
-                break;
-            case 6:
-                sorter.radix_sort(in, out);
-                break;
-            case 7:
-                sorter.counting_sort(in, out);
-                break;
-            case 8:
+            case 2:
                 sorter.bubble_sort(in, out);
                 break;
             default:

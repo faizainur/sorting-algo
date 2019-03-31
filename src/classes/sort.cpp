@@ -22,7 +22,19 @@ bool sort::load_data(std::string path ){
     input.open(path);
 
     if (!input){
-        std::cout << "Error" << std::endl;
+        rlutil::setColor(COLOR_RED);
+        std::cout << "Cannot find " << path << std::endl;
+        #if __linux__
+        rlutil::resetColor();
+        #elif _MINGW32_
+            rlutil::setColor(COLOR_WHITE);
+        #elif _CYGWIN32_
+            rlutil::setColor(COLOR_WHITE);
+        #elif _WIN32
+            rlutil::setColor(COLOR_WHITE);
+        #endif
+        wait_key();
+        return false;
     }
     std::string line;
    while (std::getline(input, line)){
@@ -105,9 +117,10 @@ int sort::bubble_sort(std::string input_path, std::string output_path){
         return EXIT_FAILURE;
     }
     DATA_STREAM.clear();
-    
+    wait_key();
     return EXIT_SUCCESS;
 }
+
 
 
 void sort::do_quicksort(std::vector<int> &vec, int L, int R) {
@@ -163,11 +176,23 @@ int sort::quick_sort(std::string input_path, std::string output_path){
     if (!write_to_file(output_path)){
         return EXIT_FAILURE;
     }
+    wait_key();
     return EXIT_SUCCESS;
 }
 
-
-
+void sort::wait_key(){
+    #if __linux__
+        std::cin.ignore(1024, '\n');
+        std::cout << "Press enter to continue...";
+        std::cin.get();
+    #elif _MINGW32_
+        system("pause");
+    #elif _CYGWIN32_
+        system("pause");
+    #elif _WIN32
+        system("pause");
+    #endif
+}
 
 
 

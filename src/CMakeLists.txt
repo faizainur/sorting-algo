@@ -15,6 +15,9 @@ set(CLASS_DEF
     classes/gen.cpp
     classes/sort.cpp)
 
+file(COPY ${PROJECT_SOURCE_DIR}/help.txt
+    DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 add_executable(sorting
                 main.cpp
                 ${CLASS_DEF})

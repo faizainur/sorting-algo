@@ -55,7 +55,7 @@ namespace UTS {
             bool write_to_file(std::string path);
             void swap(std::vector<int>& v, int x, int y);
             bool load_data(std::string path_to_file);
-
+            void wait_key();
 
             
     };

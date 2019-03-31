@@ -1,4 +1,0 @@
-D:/Kuliah/Semester 4 2019/Algoritma/UTS/build/win32/CMakeFiles/sorting.dir
-D:/Kuliah/Semester 4 2019/Algoritma/UTS/build/win32/CMakeFiles/generator.dir
-D:/Kuliah/Semester 4 2019/Algoritma/UTS/build/win32/CMakeFiles/edit_cache.dir
-D:/Kuliah/Semester 4 2019/Algoritma/UTS/build/win32/CMakeFiles/rebuild_cache.dir
